@@ -44,7 +44,7 @@ def preprocess():
     df["company"] = df["company"].apply(clean_text)
     df["location"] = df["location"].fillna("remote").apply(clean_text)
 
-    df["job_category"] = df["job_title"].apply(categorize_job)
+    df["job_category_rule"] = df["job_title"].apply(categorize_job)
 
     df.to_csv(CLEANED_PATH, index=False)
     print(f"Preprocessed data saved to {CLEANED_PATH}")
